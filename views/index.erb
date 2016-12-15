@@ -1,0 +1,38 @@
+<!-- Do your magic ! -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <% @database.each_with_index do |article, ind| %>
+        <div class="article">
+          <h2><%= article[:title] %></h2>
+          <div class="article-body">
+            <img src="<%= article[:photo] %>">
+            <p class="content"><%= article[:content] %></p>
+          </div>
+          <p class="rating">
+            <% article[:rating].to_i.times do %>
+              <i class= "fa fa-star points"></i>
+            <% end %>
+            <% (5 - article[:rating].to_i).times do %>
+              <i class= "fa fa-star"></i>
+            <% end %>
+          </p>
+          <button class="comments-btn btn">See comments</button>
+          <div class="comments hidden">
+            <% @comments[ind].each_with_index do |comm, id| %>
+            <p class="comment-body"><%= id + 1 %>. <%= comm %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+  $('.comments-btn').on('click', function() {
+    $('.comments').toggleClass('hidden');
+  });
+});
+</script>

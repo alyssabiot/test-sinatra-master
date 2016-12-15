@@ -1,0 +1,11 @@
+@import url('components/navbar.css');
+@import url('components/articles.css');
+@import url('components/comments.css');
+
+body {
+  background-color: #DEEDEF;
+}
+
+p {
+  font-size: 16px;
+}

@@ -1,0 +1,15 @@
+Ruby on Rails Essay
+
+We want to create an app which lets students take driving lessons with teachers, on specified meeting points.
+
+1. The teachers can give lessons on one or more meeting points.
+2. The teachers can create availabilities (Ex: April, 15th 2017, from 8am to 11am and from 3pm to 6pm).
+3. Lessons last 1 or 2 hours.
+4. The students can list teacher availabilities for a specific meeting point and lesson duration (1 or 2 hours).
+5. The students can book a lesson with a teacher at specific meeting point and datetime, for a specific time.
+6. The teachers can accept or decline lessons bookings.
+
+Describe the data model you’d use for this app. What are the key models? What are their attributes? How will your code use them?
+
+>
+
