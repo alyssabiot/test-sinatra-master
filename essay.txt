@@ -12,4 +12,35 @@ We want to create an app which lets students take driving lessons with teachers,
 Describe the data model you’d use for this app. What are the key models? What are their attributes? How will your code use them?
 
 >
+The app will contain 5 models :
+- Student
+- Teacher
+- MeetingPoint
+- Availability
+- Booking
+See file "db_schema.png" for details of the database's structure
+
+The key models are Booking, Availability and MeetingPoint because they connect the models Student and Teacher and are the core of the app.
+Their attributes are :
+- MeetingPoint :
+    - location :string
+    - teacher_id :references
+- Availability :
+    - date :date
+    - starts_at :time
+    - duration :integer
+    - teacher_id :references
+- Booking :
+    - student_id :references
+    - teacher_id :references
+    - meeting_point_id :references
+    - availability_id
+    - date :date
+    - starts_at :time
+    - duration :integer
+    - accepted :boolean, default :false
+
+When a Student is looking for a lesson, it can select a date and time and location => this will show a list of available Teachers.
+The Student can ask for a Booking with the choosen Teacher at wanted date, time and location for 1 or 2 hours.
+If the Teacher validates the Booking, the "accepted" attributes becomes "true" and the corresponding Availability is either deleted or updated according to the duration of the lesson.
 
